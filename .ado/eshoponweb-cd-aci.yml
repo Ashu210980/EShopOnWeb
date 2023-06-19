@@ -1,13 +1,13 @@
 #NAME THE PIPELINE SAME AS FILE (WITHOUT ".yml")
 
 # trigger: none
-resources:
-  pipelines:
-  - pipeline: eshoponweb-ci-dockercompose
-    source: eshoponweb-ci-dockercompose # given pipeline name
-    trigger: true
-  repositories:
-    - repository: self
+ trigger:
+   branches:
+     include:
+     - main
+   paths:
+     include:
+     - src/web/*
       trigger: none
 
 variables:
